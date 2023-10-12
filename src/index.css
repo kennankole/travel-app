@@ -17,8 +17,83 @@
 
 body {
   margin: 0;
+}
+
+/*##########################################*/
+/*              LANDING PAGE                */
+/*##########################################*/
+.landing-page {
+  margin: 0 auto;
+  padding: 10%;
+}
+
+.leading-text {
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin-bottom: 2%;
+  width: 70%;
+}
+
+.home-subtitle {
+  width: 70%;
+}
+
+.home-subtitle{
+  font-size: 1.6rem;
+  margin-bottom: 2%;
+}
+
+.home-para {
+  margin-bottom: 5%;
+}
+
+.home-buttons {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  gap: 20px;
+
+}
+/*##########################################*/
+/*             NAVIGATION MENU              */
+/*##########################################*/
+.navbar {
+  width: 100%;
+  padding: 20px;
+}
+
+.nav-elements {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.left {
+  font-size: 32px;
+  font-weight: 700;
+  flex: 1;
+}
+
+.right {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  flex: 2;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-elements {
+    flex-direction: column;
+  }
+  .right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .leading-text, 
+  .home-subtitle {
+    width: 100%;
+  }
+  .home-buttons {
+    flex-direction: column;
+  }
 }

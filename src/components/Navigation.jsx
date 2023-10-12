@@ -1,6 +1,8 @@
+
+
 const NavigationMenu = () => (
-  <nav>
-    <ul>
+  <nav className="navbar">
+    <ul className="nav-elements">
       <div className="left">
         Logo
       </div>
