@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaAngleDown } from 'react-icons/fa6';
+import { FaAngleDown, FaAngleUp } from 'react-icons/fa6';
 
 const NavigationMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,7 +44,12 @@ const NavigationMenu = () => {
                 <li className="nav-links-mobile"><a>About</a></li>
                 <li className="nav-links-mobile destination">
                   <a>Destinations</a>
-                  <FaAngleDown className="drop-down-btn" />
+                  {dropDown ? (
+                    <FaAngleUp className="drop-down-btn" />
+                  ) : (
+                    <FaAngleUp className="drop-down-btn" />
+                  )}
+
                 </li>
                 <li className="nav-links-mobile"><a>Journeys</a></li>
                 <li className="nav-links-mobile"><a>Contact us</a></li>
@@ -66,7 +71,12 @@ const NavigationMenu = () => {
                   Destinations
                 </a>
                 <div>
-                  <FaAngleDown color="white" onClick={toggelDropDown} />
+                  {dropDown ? (
+                    <FaAngleDown className="drop-down-btn" onClick={toggelDropDown} />
+                  ) : (
+                    <FaAngleUp className="drop-down-btn" onClick={toggelDropDown}/>
+                  )}
+                  
                 </div>
               </div>
             </li>
