@@ -6,8 +6,8 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /* color: rgba(255, 255, 255, 0.87); */
+  /* background-color: #242424; */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -80,20 +80,80 @@ body {
   flex: 2;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .nav-elements {
     flex-direction: column;
   }
+
   .right {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 20px;
+    padding: 5%;
   }
+  .left {
+    padding: 0 5%;
+  }
+
   .leading-text, 
   .home-subtitle {
     width: 100%;
   }
   .home-buttons {
     flex-direction: column;
+  }
+}
+
+/*##########################################*/
+/*         MOBILE NAVIGATION MENU           */
+/*##########################################*/
+.hamburger-button {
+  display: none;
+}
+
+.hamburger-button.open .bar:nth-child(1){
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger-button.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-button.open .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media (max-width: 768px) {
+  .desktop {
+    display: none;
+  }
+  .hamburger-button {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .bar {
+    width: 30px;
+    height: 3px;
+    background: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    height: 100%;
+    width: 250px;
+    background: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: 0.4s;
   }
 }
