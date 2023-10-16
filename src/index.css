@@ -114,20 +114,6 @@ body {
   min-width: 175px;
 }
 
-/* Menu Popup */
-.popup {
-  position: absolute;
-  top: 70px;
-  right: 375px;
-  background-color: #242424;
-  color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  z-index: 1001;
-  display: inline-block;
-  white-space: nowrap;
-}
 
 
 @media only screen and (max-width: 768px) {
@@ -205,5 +191,14 @@ body {
     background: #fff;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
     transition: 0.4s;
+  }
+  .drop-down-mobile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .destination-ul {
+    margin-top: -0;
   }
 }

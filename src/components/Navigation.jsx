@@ -14,6 +14,7 @@ const NavigationMenu = () => {
     setDropDown(!dropDown);
   }
 
+  console.log(isOpen)
   const destinations = (
     <ul className="destination-ul">
       <li className="nav-links">Kenya</li>
@@ -42,14 +43,23 @@ const NavigationMenu = () => {
               <div className="right">
                 <li className="nav-links-mobile"><a>Home</a></li>
                 <li className="nav-links-mobile"><a>About</a></li>
-                <li className="nav-links-mobile destination">
-                  <a>Destinations</a>
-                  {dropDown ? (
-                    <FaAngleUp className="drop-down-btn" />
-                  ) : (
-                    <FaAngleUp className="drop-down-btn" />
-                  )}
+                <li className="nav-links-mobile">
+                  <div className="drop-down-mobile">
+                    <a>
+                      Destinations
+                    </a>
+                    <div>
+                      {dropDown ? (
+                        <FaAngleDown className="drop-down-btn" onClick={toggelDropDown} />
+                      ) : (
+                        <FaAngleUp className="drop-down-btn" onClick={toggelDropDown} />
+                      )}
 
+                    </div>
+                  </div>
+                  <div className="destination-dropdown-mobile">
+                    {isOpen && dropDown && (destinations)}
+                  </div>
                 </li>
                 <li className="nav-links-mobile"><a>Journeys</a></li>
                 <li className="nav-links-mobile"><a>Contact us</a></li>
@@ -74,9 +84,9 @@ const NavigationMenu = () => {
                   {dropDown ? (
                     <FaAngleDown className="drop-down-btn" onClick={toggelDropDown} />
                   ) : (
-                    <FaAngleUp className="drop-down-btn" onClick={toggelDropDown}/>
+                    <FaAngleUp className="drop-down-btn" onClick={toggelDropDown} />
                   )}
-                  
+
                 </div>
               </div>
             </li>
@@ -87,7 +97,7 @@ const NavigationMenu = () => {
         </ul>
       </nav>
       <div className="destination-dropdown">
-        {dropDown && (destinations)}
+        {isOpen === false && dropDown && (destinations)}
       </div>
     </>
   )
