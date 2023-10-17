@@ -96,24 +96,20 @@ body {
   flex: 2;
 }
 
-.drop-down {
+.destination-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
 }
 
-.destination-dropdown {
-  display: flex;
-  justify-content: center;
-  padding-left: 7%;
+.drop-down {
+  position: absolute;;
+  left: 565px;
+  width: 275px;
+  z-index: 1001;
+  top: 65px;
 }
-
-.destination-ul {
-  margin-top: -10px;
-  min-width: 175px;
-}
-
 
 
 @media only screen and (max-width: 768px) {

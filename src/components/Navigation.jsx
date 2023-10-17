@@ -5,7 +5,6 @@ const NavigationMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [dropDown, setDropDown] = useState(false);
 
-
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -14,14 +13,15 @@ const NavigationMenu = () => {
     setDropDown(!dropDown);
   }
 
-  console.log(isOpen)
   const destinations = (
-    <ul className="destination-ul">
-      <li className="nav-links">Kenya</li>
-      <li className="nav-links">South Africa</li>
-      <li className="nav-links">Europe</li>
-      <li className="nav-links">Dubai</li>
-    </ul>
+    <div className="destination-ul">
+      <ul className="dropdown-link">
+        <li className="nav-links">Kenya</li>
+        <li className="nav-links">South Africa</li>
+        <li className="nav-links">Europe</li>
+        <li className="nav-links">Dubai</li>
+      </ul>
+    </div>
   )
   return (
     <>
@@ -48,14 +48,13 @@ const NavigationMenu = () => {
                     <a>
                       Destinations
                     </a>
-                    <div>
-                      {dropDown ? (
+                    {dropDown ? (
+                      <>
                         <FaAngleDown className="drop-down-btn" onClick={toggelDropDown} />
-                      ) : (
-                        <FaAngleUp className="drop-down-btn" onClick={toggelDropDown} />
-                      )}
-
-                    </div>
+                      </>
+                    ) : (
+                      <FaAngleUp className="drop-down-btn" onClick={toggelDropDown} />
+                    )}
                   </div>
                   <div className="destination-dropdown-mobile">
                     {isOpen && dropDown && (destinations)}
@@ -75,32 +74,38 @@ const NavigationMenu = () => {
           </div>
           <div className="right">
             <li className="nav-links"><a>Home</a></li>
-            <li className="nav-links">
-              <div className="drop-down">
-                <a>
-                  Destinations
-                </a>
-                <div>
-                  {dropDown ? (
-                    <FaAngleDown className="drop-down-btn" onClick={toggelDropDown} />
-                  ) : (
-                    <FaAngleUp className="drop-down-btn" onClick={toggelDropDown} />
-                  )}
-
+            <li
+              className="nav-links"
+              onMouseEnter={toggelDropDown}
+              onMouseLeave={toggelDropDown}
+            >
+              {dropDown ? (
+                <div className="destination-icon">
+                  <a>
+                    Destination
+                  </a>
+                  <FaAngleDown className="drop-down-btn" />
                 </div>
-              </div>
+              ) : (
+                <div className="destination-icon">
+                  <a>Destination</a>
+                  <FaAngleUp className="drop-down-btn" />
+                </div>
+              )}
+              {dropDown && (
+                <div className="drop-down">
+                  {destinations}
+                </div>
+              )}
             </li>
             <li className="nav-links"><a>About</a></li>
             <li className="nav-links"><a>Journeys</a></li>
+            <li className="nav-links"><a>Gallery</a></li>
             <li className="nav-links"><a>Contact us</a></li>
           </div>
         </ul>
       </nav>
-      <div className="destination-dropdown">
-        {isOpen === false && dropDown && (destinations)}
-      </div>
     </>
   )
-
 };
 export default NavigationMenu;
