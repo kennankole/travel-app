@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa6';
+import { Link } from "react-router-dom";
 
 const NavigationMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,10 +17,10 @@ const NavigationMenu = () => {
   const destinations = (
     <div className="destination-ul">
       <ul className="dropdown-link">
-        <li className="nav-links">Kenya</li>
-        <li className="nav-links">South Africa</li>
-        <li className="nav-links">Europe</li>
-        <li className="nav-links">Dubai</li>
+        <li className="nav-links"><Link to="kenya">Kenya</Link></li>
+        <li className="nav-links"><Link to="south-africa">South Africa</Link></li>
+        <li className="nav-links"><Link to="europe">Europe</Link></li>
+        <li className="nav-links"><Link to="dubai">Dubai</Link></li>
       </ul>
     </div>
   )
@@ -41,13 +42,15 @@ const NavigationMenu = () => {
                 Logo
               </div>
               <div className="right">
-                <li className="nav-links-mobile"><a>Home</a></li>
-                <li className="nav-links-mobile"><a>About</a></li>
+                <li className="nav-links-mobile">
+                  <Link to="home">Home</Link>
+                </li>
+                <li className="nav-links-mobile"><Link to="about">About</Link></li>
                 <li className="nav-links-mobile">
                   <div className="drop-down-mobile">
-                    <a>
+                    <Link to="destinations">
                       Destinations
-                    </a>
+                    </Link>
                     {dropDown ? (
                       <>
                         <FaAngleDown className="drop-down-btn" onClick={toggelDropDown} />
@@ -60,8 +63,8 @@ const NavigationMenu = () => {
                     {isOpen && dropDown && (destinations)}
                   </div>
                 </li>
-                <li className="nav-links-mobile"><a>Journeys</a></li>
-                <li className="nav-links-mobile"><a>Contact us</a></li>
+                <li className="nav-links-mobile"><Link to="journeys">Journeys</Link></li>
+                <li className="nav-links-mobile"><Link to="contact">Contact us</Link></li>
               </div>
             </ul>
           </nav>
@@ -73,7 +76,9 @@ const NavigationMenu = () => {
             Logo
           </div>
           <div className="right">
-            <li className="nav-links"><a>Home</a></li>
+            <li className="nav-links">
+              <Link to="home">Home</Link>
+            </li>
             <li
               className="nav-links"
               onMouseEnter={toggelDropDown}
@@ -81,14 +86,14 @@ const NavigationMenu = () => {
             >
               {dropDown ? (
                 <div className="destination-icon">
-                  <a>
+                  <Link to="destination">
                     Destination
-                  </a>
+                  </Link>
                   <FaAngleDown className="drop-down-btn" />
                 </div>
               ) : (
                 <div className="destination-icon">
-                  <a>Destination</a>
+                  <Link to="destination">Destination</Link>
                   <FaAngleUp className="drop-down-btn" />
                 </div>
               )}
@@ -98,10 +103,18 @@ const NavigationMenu = () => {
                 </div>
               )}
             </li>
-            <li className="nav-links"><a>About</a></li>
-            <li className="nav-links"><a>Journeys</a></li>
-            <li className="nav-links"><a>Gallery</a></li>
-            <li className="nav-links"><a>Contact us</a></li>
+            <li className="nav-links">
+              <Link to="about">About</Link>
+            </li>
+            <li className="nav-links">
+              <Link to="journeys">Journeys</Link>
+            </li>
+            <li className="nav-links">
+              <Link to="gallery">Gallery</Link>
+            </li>
+            <li className="nav-links">
+              <Link to="contact">Contact</Link>
+            </li>
           </div>
         </ul>
       </nav>
