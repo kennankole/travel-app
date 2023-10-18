@@ -1,5 +1,10 @@
 import { Button } from "flowbite-react";
 import NavigationMenu from "./Navigation";
+import { FaMapMarked, FaRoute } from 'react-icons/fa';
+// import { RiUser6Fill } from 'react-icons/ri';
+import { AiFillCar } from 'react-icons/ai';
+import { MdOutlineFamilyRestroom } from 'react-icons/md'
+
 import '../index.css';
 
 const Homepage = () => (
@@ -19,9 +24,58 @@ const Homepage = () => (
           <Button>View our destinations</Button>
           <Button>About us.</Button>
         </div>
-
       </div>
-
+    </section>
+    <section className="card-section">
+      <div className="card-container">
+        <div className="cards">
+          <div className="icon-container">
+            <FaRoute className="icon" />
+          </div>
+          <h3 className="icon-title">Travel Planning</h3>
+          <div className="icon-text">
+            <p className="icon-para">
+              Expertise travel planning from our well knowledge local consultants.
+            </p>
+          </div>
+        </div>
+        <div className="cards">
+          <div className="icon-container">
+            <FaMapMarked className="icon" />
+          </div>
+          <h3 className="icon-title">Tailor-made Tours</h3>
+          <div className="icon-text">
+            <p className="icon-para">
+              Travel the way you want to travel
+            </p>
+          </div>
+        </div>
+        <div className="cards">
+          <div className="icon-container">
+            <AiFillCar className="icon" />
+          </div>
+          <h3 className="icon-title">Transportaion</h3>
+          <div className="icon-text">
+            <p className="icon-para">
+              On the road to discover your destination’s many secrets
+            </p>
+          </div>
+        </div>
+        <div className="cards">
+          <div className="icon-container">
+            <MdOutlineFamilyRestroom className="icon" />
+          </div>
+          <h3 className="icon-title">Family Friendly</h3>
+          <div className="icon-text">
+            <p className="icon-para">
+              The quintessential African family holiday
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="services-container">
+        Our services
+      </div>
     </section>
   </main>
 )

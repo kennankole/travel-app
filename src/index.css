@@ -6,8 +6,6 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -22,9 +20,16 @@ body {
 /*##########################################*/
 /*              LANDING PAGE                */
 /*##########################################*/
+
 .landing-page {
   margin: 0 auto;
   padding: 10%;
+  background-image: url(./assets/images/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(248, 247, 216, 0.7);
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
 }
 
 .leading-text {
@@ -50,7 +55,25 @@ body {
 .home-buttons {
   display: flex;
   gap: 20px;
+}
 
+.home-container {
+  color: #fff;
+}
+
+.leading-text {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.home-subtitle {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.home-para {
+  font-weight: 1.5rem;
+  font-weight: 500;
 }
 /*##########################################*/
 /*             NAVIGATION MENU              */
@@ -60,6 +83,12 @@ body {
   padding: 20px;
 }
 
+.navbar.desktop {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: burlywood;
+}
 .nav-elements {
   display: flex;
   justify-content: space-between;
@@ -74,7 +103,7 @@ body {
   padding: 8px 18px;
   transition: all 0.5s ease-out;
   border-radius: 4px;
-  border: 1px solid #242424;
+
 }
 
 .nav-links:hover,
