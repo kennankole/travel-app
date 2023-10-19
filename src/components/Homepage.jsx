@@ -1,4 +1,3 @@
-import { Button } from "flowbite-react";
 import NavigationMenu from "./Navigation";
 import { FaMapMarked, FaRoute } from 'react-icons/fa';
 // import { RiUser6Fill } from 'react-icons/ri';
@@ -21,8 +20,8 @@ const Homepage = () => (
           self-drive, FIT and group travel services and products they deserve.
         </p>
         <div className="home-buttons">
-          <Button>View our destinations</Button>
-          <Button>About us.</Button>
+          <button type="button" className="home-button">View our destinations</button>
+          <button type="button" className="home-button">About us.</button>
         </div>
       </div>
     </section>

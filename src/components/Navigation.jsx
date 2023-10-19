@@ -15,14 +15,12 @@ const NavigationMenu = () => {
   }
 
   const destinations = (
-    <div className="destination-ul">
-      <ul className="dropdown-link">
-        <li className="nav-links"><Link to="kenya">Kenya</Link></li>
-        <li className="nav-links"><Link to="south-africa">South Africa</Link></li>
-        <li className="nav-links"><Link to="europe">Europe</Link></li>
-        <li className="nav-links"><Link to="dubai">Dubai</Link></li>
-      </ul>
-    </div>
+    <ul className="dropdown-link">
+      <li className="nav-link"><Link to="kenya">Kenya</Link></li>
+      <li className="nav-link"><Link to="south-africa">South Africa</Link></li>
+      <li className="nav-link"><Link to="europe">Europe</Link></li>
+      <li className="nav-link"><Link to="dubai">Dubai</Link></li>
+    </ul>
   )
   return (
     <>
@@ -73,7 +71,7 @@ const NavigationMenu = () => {
       <nav className="navbar desktop">
         <ul className="nav-elements">
           <div className="left">
-            Logo
+            <h1 className="logo-text">Logo</h1>
           </div>
           <div className="right">
             <li className="nav-links">
@@ -92,14 +90,12 @@ const NavigationMenu = () => {
                   <FaAngleDown className="drop-down-btn" />
                 </div>
               ) : (
-                <div className="destination-icon">
+                <div className="destination-icon drop">
                   <Link to="destination">Destination</Link>
                   <FaAngleUp className="drop-down-btn" />
-                </div>
-              )}
-              {dropDown && (
-                <div className="drop-down">
-                  {destinations}
+                  <div className="drop-down">
+                    {destinations}
+                  </div>
                 </div>
               )}
             </li>
