@@ -72,9 +72,6 @@ const Homepage = () => (
           </div>
         </div>
       </div>
-      <div className="services-container">
-        Our services
-      </div>
     </section>
   </main>
 )
